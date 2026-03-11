@@ -1,18 +1,24 @@
 package kr.co.project.product.management.presentation;
 
+import jakarta.validation.constraints.NotNull;
 import kr.co.project.product.management.domain.Product;
 
 import java.util.Objects;
 
 public class ProductDto {
     private Long id;
+
+    @NotNull
     private String name;
+    @NotNull
     private Integer price;
+    @NotNull
     private Integer amount;
 
     public Long getId() {
         return id;
     }
+
 
     public void setId(Long id) {
         this.id = id;
