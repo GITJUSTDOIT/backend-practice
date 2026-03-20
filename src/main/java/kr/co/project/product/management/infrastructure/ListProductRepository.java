@@ -38,12 +38,14 @@ public class ListProductRepository {
                 .toList();
     }
 
+
     public List<Product> findByNameContaining(String name) {
         return products.stream()
                 .filter(product -> product.containsName(name))
                 .toList();
     }
 
+    // 스레드 세이프하지 않은 update라는 점 (367페이지)
     public Product update(Product product) {
         Integer indexToModify = products.indexOf(product);
         products.set(indexToModify, product);
